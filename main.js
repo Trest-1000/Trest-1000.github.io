@@ -1,89 +1,275 @@
-'use script';
- const addKastBtn = document.getElementById('add-kast-btn');
- const deskKastInput = document.getElementById('description-kast');
- const mytoWrapper = document.querySelector('.myto-wrapper');
- 
-let kasts;
-!localStorage.kasts ? kasts = [] : kasts = JSON.parse(localStorage.getItem('kasts'));
+'use strict';
+var simple = document.getElementById('simple')
+var simpleItem = document.getElementsByClassName('simple-item');
+var itemPlus = document.querySelector('item-plus');
+var arrResult = [];
 
-let mytoItemElems = [];
+simple.addEventListener('click', event => {
+   if(event.target.className = 'btn'){
+       console.log(event.target)
+   } 
+});
 
- function Kast(description) {
-     this.description = description;
-     this.completed = false;
- }
-
-const createTemplate = (kast, index) => {
-  return `
-      <div class="myto-item">
-          <div class="description ${kast.completed ? 'checked' : ''}">${kast.description} 
-          <div class="buttons">
-              <input onclick="completeKast(${index})" class="btn-complete" type="checkbox" ${kast.completed ? 'checked' : ''}>
-              <button onclick="deleteKast(${index})" class="btn-delete">Очистить</button>
-          </div>
-        </div>
-    </div>
-
-  `
-}
- 
-const filterKasts = () => {
-  const activeKasts = kasts.length && kasts.filter(item => item.completed == false);
-  const completedKasts = kasts.length && kasts.filter(item => item.completed == true);
-  kasts = [...activeKasts,...completedKasts];
-}
-
-const fillHtmlList = () => {
-  mytoWrapper.innerHTML = "";
-  if(kasts.length > 0) {
-    filterKasts();
-    kasts.forEach((item, index) => {
-      mytoWrapper.innerHTML += createTemplate(item, index);
+document.querySelector('.btn-1').addEventListener('click', () => {
+    let x = document.querySelector('.btn-1').value;
+    if (document.querySelector('.btn-1').checked) { //Если выбран то выводим
+      document.getElementById('our_rez').innerHTML += + Boolean(true);
+      
+    }
+       else {     //если не выбран, я буду стирать значение
+           document.getElementById('our_rez').innerHTML = '';
+       } 
+       arrResult.push(+ Boolean(true))
+       console.log(arrResult)
+      //Сумирую элементы в массиве
+     var reduced = arrResult.reduce(function(a, b) {
+      return a + b;
     });
-    mytoItemElems = document.querySelectorAll('.myto-item');
+    console.log(reduced)
+         
+   });
+
+
+   
+document.querySelector('.btn-2').addEventListener('click', () => {
+    let f = document.querySelector('.btn-2').value;
+    if (document.querySelector('.btn-2').checked) { //Если выбран то выводим
+      document.getElementById('our_rez2').innerHTML += + Boolean(true);
+       }
+       else {     //если не выбран, я буду стирать значение
+           document.getElementById('our_rez2').innerHTML = '';
+       } 
+       arrResult.push(+ Boolean(true))
+       console.log(arrResult)
+        //Сумирую элементы в массиве
+       var reduced = arrResult.reduce(function(a, b) {
+        return a + b;
+      });
+      console.log(reduced)
+      
+   });
+ 
+   document.querySelector('.btn-3').addEventListener('click', () => {
+    let z = document.querySelector('.btn-3').value;
+    if (document.querySelector('.btn-3').checked) { //Если выбран то выводим
+      document.getElementById('our_rez3').innerHTML += + Boolean(true);
+    }
+       else {     //если не выбран, я буду стирать значение
+           document.getElementById('our_rez3').innerHTML = '';
+       } 
+       arrResult.push(+ Boolean(true))
+       console.log(arrResult) 
+         //Сумирую элементы в массиве
+       var reduced = arrResult.reduce(function(a, b) {
+        return a + b;
+      });
+      console.log(reduced)
+   });
+
+   document.querySelector('.btn-4').addEventListener('click', () => {
+    let q = document.querySelector('.btn-4').value;
+    if (document.querySelector('.btn-4').checked) { //Если выбран то выводим
+      document.getElementById('our_rez4').innerHTML += + Boolean(true);
+    }
+       else {     //если не выбран, я буду стирать значение
+           document.getElementById('our_rez4').innerHTML = '';
+       } 
+       arrResult.push(+ Boolean(true))
+       console.log(arrResult)
+          //Сумирую элементы в массиве
+       var reduced = arrResult.reduce(function(a, b) {
+        return a + b;
+      });
+      console.log(reduced) 
+   });
+
+   document.querySelector('.btn-5').addEventListener('click', () => {
+    let r = document.querySelector('.btn-5').value;
+    if (document.querySelector('.btn-5').checked) { //Если выбран то выводим
+      document.getElementById('our_rez5').innerHTML += + Boolean(true);
+    }
+       else {     //если не выбран, я буду стирать значение
+           document.getElementById('our_rez5').innerHTML = '';
+       } 
+       arrResult.push(+ Boolean(true))
+       console.log(arrResult)
+          //Сумирую элементы в массиве
+       var reduced = arrResult.reduce(function(a, b) {
+        return a + b;
+      });
+      console.log(reduced)
+   });
+
+
+ document.querySelector('.btn-6').addEventListener('click', () => {
+    let s = document.querySelector('.btn-6').value;
+    if (document.querySelector('.btn-6').checked) { //Если выбран то выводим
+      document.getElementById('our_rez6').innerHTML += + Boolean(true);
+    }
+       else {     //если не выбран, я буду стирать значение
+           document.getElementById('our_rez6').innerHTML = '';
+       } 
+       arrResult.push(+ Boolean(true))
+       console.log(arrResult)
+          //Сумирую элементы в массиве
+       var reduced = arrResult.reduce(function(a, b) {
+        return a + b;
+      });
+      console.log(reduced)
+});
+/// чек бокс
+ document.querySelector('.btn-7').addEventListener('click', () => {
+     let t = document.querySelector('.btn-7').value;
+     if (document.querySelector('.btn-7').checked) { //Если выбран то выводим
+       document.getElementById('our_rez7').innerHTML += + Boolean(true);
+     }
+        else {     //если не выбран, я буду стирать значение
+            document.getElementById('our_rez7').innerHTML = '';
+        } 
+        arrResult.push(+ Boolean(true))
+       console.log(arrResult)
+          //Сумирую элементы в массиве
+       var reduced = arrResult.reduce(function(a, b) {
+        return a + b;
+      });
+      console.log(reduced)
+    });
+
+    document.querySelector('.btn-8').addEventListener('click', () => {
+        let u = document.querySelector('.btn-8').value;
+        if (document.querySelector('.btn-8').checked) { //Если выбран то выводим
+          document.getElementById('our_rez8').innerHTML += + Boolean(true);
+        }
+           else {     //если не выбран, я буду стирать значение
+               document.getElementById('our_rez7').innerHTML = '';
+           } 
+           arrResult.push(+ Boolean(true))
+           console.log(arrResult)
+        //Сумирую элементы в массиве
+           var reduced = arrResult.reduce(function(a, b) {
+            return a + b;
+          });
+          console.log(reduced)
+       });
+
+       document.querySelector('.btn-9').addEventListener('click', () => {
+        let v = document.querySelector('.btn-9').value;
+        if (document.querySelector('.btn-9').checked) { //Если выбран то выводим
+          document.getElementById('our_rez9').innerHTML += + Boolean(true);
+        }
+           else {     //если не выбран, я буду стирать значение
+               document.getElementById('our_rez9').innerHTML = '';
+           } 
+           arrResult.push(+ Boolean(true))
+           console.log(arrResult)
+        //Сумирую элементы в массиве
+           var reduced = arrResult.reduce(function(a, b) {
+            return a + b;
+          });
+          console.log(reduced)
+       });
+
+       document.querySelector('.btn-10').addEventListener('click', () => {
+        let w = document.querySelector('.btn-10').value;
+        if (document.querySelector('.btn-10').checked) { //Если выбран то выводим
+          document.getElementById('our_rez10').innerHTML += + (Boolean(true) * 0.5);
+        }
+           else {     //если не выбран, я буду стирать значение
+               document.getElementById('our_rez10').innerHTML = '';
+           } 
+           arrResult.push(+ Boolean(true) * 0.5)
+           console.log(arrResult)
+         //Сумирую элементы в массиве
+           var reduced = arrResult.reduce(function(a, b) {
+            return a + b;
+          });
+          console.log(reduced)
+       });
+
+       document.querySelector('.btn-11').addEventListener('click', () => {
+        let e = document.querySelector('.btn-11').value;
+        if (document.querySelector('.btn-11').checked) { //Если выбран то выводим
+          document.getElementById('our_rez10').innerHTML += + (Boolean(true) * 0.5);
+        }
+           else {     //если не выбран, я буду стирать значение
+               document.getElementById('our_rez10').innerHTML = '';
+           } 
+           arrResult.push(+ Boolean(true) * 0.5)
+           console.log(arrResult) 
+        //Сумирую элементы в массиве
+           var reduced = arrResult.reduce(function(a, b) {
+            return a + b;
+          });
+          console.log(reduced)
+       });
+
+       document.querySelector('.btn-12').addEventListener('click', () => {
+        let h = document.querySelector('.btn-12').value;
+        if (document.querySelector('.btn-12').checked) { //Если выбран то выводим
+          document.getElementById('our_rez11').innerHTML += + (Boolean(true) * 0.5);
+        }
+           else {     //если не выбран, я буду стирать значение
+               document.getElementById('our_rez11').innerHTML = '';
+           }
+           arrResult.push(+ Boolean(true) * 0.5)
+           console.log(arrResult) 
+          //Сумирую элементы в массиве
+           var reduced = arrResult.reduce(function(a, b) {
+            return a + b;
+          });
+          console.log(reduced)
+       });
+
+       document.querySelector('.btn-13').addEventListener('click', () => {
+        let hl = document.querySelector('.btn-13').value;
+        if (document.querySelector('.btn-13').checked) { //Если выбран то выводим
+          document.getElementById('our_rez11').innerHTML +=  + (Boolean(true) * 0.5);
+        }
+           else {     //если не выбран, я буду стирать значение
+               document.getElementById('our_rez11').innerHTML = '';
+           } 
+           arrResult.push(+ Boolean(true) * 0.5)
+           console.log(arrResult) 
+            //Сумирую элементы в массиве
+           var reduced = arrResult.reduce(function(a, b) {
+            return a + b;
+          });
+          console.log(reduced)
+       });
+
+       document.querySelector('.btn-14').addEventListener('click', () => {
+        let hz = document.querySelector('.btn-14');
+        if (document.querySelector('.btn-14').checked) { //Если выбран то выводим
+          document.getElementById('our_rez12').innerHTML += + Boolean(true);
+        }
+           else {     //если не выбран, я буду стирать значение
+               document.getElementById('our_rez12').innerHTML = '';
+           } 
+           arrResult.push(+ Boolean(true)) 
+           console.log(arrResult)
+          //Сумирую элементы в массиве
+           var reduced = arrResult.reduce(function(a, b) {
+            return a + b;
+          });
+          console.log(reduced)
+       })
+       //Кнопка
+       var button = document.querySelector('.numbers');
+         button.addEventListener('click', () => {
+          var zet = arrResult.reduce(function(a, b) {
+            return a + b;
+          });
+          console.log(zet)
+         
+             if(true) {
+               document.getElementById('summa').innerHTML += zet;
+             }         
+             button.disabled = true;
+             setTimeout(function() { button.disabled = false },10000000000000);
+         });
+        
+        // document.querySelector('.numbers');
+
+         //document.getElementById('summa').innerHTML += zet;
     
-  }
-}
-
-fillHtmlList();
-
-const updateLocal = () => {
-    localStorage.setItem('kasts', JSON.stringify(kasts));
-}
-
-const completeKast = index => {
-  console.log(index);
-  kasts[index].completed = !kasts[index].completed;
-  if(kasts[index].completed) {
-     mytoItemElems[index].classList.add('checked');
     
-  }else {
-    mytoItemElems[index].classList.remove('checked');
-  }
-
-
-  updateLocal();
-  fillHtmlList();
-}
-
-///event listener 
-addKastBtn.addEventListener('click', () => {
-     kasts.push(new Kast(deskKastInput.value));
-     updateLocal();   
-     fillHtmlList();
-     deskKastInput.value = '';
-})
-
-const deleteKast = index => {
- setTimeout(() => {
-      kasts.splice(index, 1);
-      updateLocal();
-      fillHtmlList();
-    },800)
-}
-
-
- //const kast = {
-   //  description : 'прогуляться на воздухе',
-     //completed : false
-//} 
